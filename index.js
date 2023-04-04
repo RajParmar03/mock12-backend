@@ -12,6 +12,10 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get("/" , (req,res) => {
+    res.status(200).send("mock12 backend repo...");
+})
+
 app.post("/register" , async(req,res) => {
     let {name, email, password} = req.body;
     try {
