@@ -23,7 +23,8 @@ app.post("/register" , async(req,res) => {
         if(users.length > 0){
             res.status(400).send({msg:"user with this email is already exist..."});
         }else{
-            let newUser = new UserModel({name , email , password , time : Date().getTime()});
+            let newUser = new UserModel({name , email , password,time: Date.now()});
+            console.log("this is new User" , newUser);
             await newUser.save();
             res.send({msg : "successfully sign up"});
         }
