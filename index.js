@@ -69,7 +69,7 @@ app.get("/getprofile" , async(req, res) => {
     }
 });
 
-app.get("/calculate"  , async(req , res) => {
+app.post("/calculate"  , async(req , res) => {
     let token = req.headers.authorization;
     let {AIA , AIR , TNY} = req.body;
     try {
